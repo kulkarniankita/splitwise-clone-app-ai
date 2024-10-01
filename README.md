@@ -36,7 +36,7 @@ To get started with this project, follow these steps:
 1. Click the "Fork" button in the top right corner of this GitHub repository to create a copy in your account.
 2. Clone your forked repository to your local machine using:
    ```
-   git clone https://github.com/your-username/split-app.git
+   git clone https://github.com/kulkarniankita/split-app.git
    ```
 3. Navigate to the project directory:
    ```
