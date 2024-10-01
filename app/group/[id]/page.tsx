@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trash2 } from 'lucide-react';
 import { useParams } from 'next/navigation';
-import { useOrganization, useOrganizationList, useUser } from '@clerk/nextjs';
+import { useOrganizationList, useUser } from '@clerk/nextjs';
 import { getGroupData, deleteExpense } from '@/app/actions';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
