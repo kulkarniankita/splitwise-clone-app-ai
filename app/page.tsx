@@ -11,11 +11,11 @@ export default function LandingPage() {
       {/* Hero Section */}
       <Banner />
       {/* Features Section */}
-      <div className="py-16 px-6 sm:px-12 max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-12 text-center text-gray-900">
           Why use Split?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
             Icon={Users}
             title="Group expense tracking"
@@ -29,12 +29,12 @@ export default function LandingPage() {
           <FeatureCard
             Icon={LineChart}
             title="Expense viewing"
-            description="View all your expenses in one place. You can view all your expenses in one place, so you can see how much you've spent and how much you owe."
+            description="View all your expenses in one place. You can see how much you've spent and how much you owe."
           />
         </div>
       </div>
       {/* Footer */}
-      <footer className="text-center py-6 text-sm text-gray-400">
+      <footer className="container mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
         By using Split, you agree to our Terms of Service and Privacy Policy
       </footer>
     </div>

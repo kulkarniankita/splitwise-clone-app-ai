@@ -71,7 +71,7 @@ export default function CreateGroup() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6">
+    <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8 max-w-2xl">
       <h1 className="text-2xl font-bold mb-2">Create a group</h1>
       <p className="text-gray-600 mb-6">
         Split expenses with friends, roommates, and more.

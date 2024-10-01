@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Banner() {
   return (
@@ -13,12 +14,14 @@ export default function Banner() {
           Whether it&apos;s a group trip or dinner, Split makes it easy to track
           shared expenses and settle up in a single tap.
         </p>
-        <Button
-          size="lg"
-          className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl p-8"
-        >
-          Get Started
-        </Button>
+        <Link href="/group">
+          <Button
+            size="lg"
+            className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl p-8"
+          >
+            Get Started
+          </Button>
+        </Link>
       </div>
     </div>
   );

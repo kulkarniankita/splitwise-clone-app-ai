@@ -6,6 +6,11 @@ import { Toaster } from '@/components/ui/toaster';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
+export const metadata = {
+  title: 'Split',
+  description: 'Split your expenses with your friends',
+};
+
 export default function RootLayout({
   children,
 }: {
