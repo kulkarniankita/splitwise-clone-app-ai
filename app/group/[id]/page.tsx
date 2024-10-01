@@ -42,7 +42,6 @@ function GroupPage() {
       infinite: true,
     },
   });
-  const { organization } = useOrganization();
   const { user, isLoaded: userLoaded } = useUser();
   const router = useRouter();
 
@@ -83,6 +82,12 @@ function GroupPage() {
   if (!selectedOrganization) {
     return <div>Organization not found</div>;
   }
+
+  // Update the isAdmin check to match the groups page
+  const isAdmin = selectedOrganization?.role === 'org:admin';
+
+  console.log('Selected Organization:', selectedOrganization);
+  console.log('Is Admin:', isAdmin);
 
   const groupDescription =
     "View and manage the details of your group. You can see the group's name, balances, and expenses. As an admin, you can also delete expenses.";
@@ -134,9 +139,6 @@ function GroupPage() {
       }
     }
   };
-
-  // @ts-expect-error Organization has membership
-  const isAdmin = organization?.membership?.role === 'org:admin';
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
