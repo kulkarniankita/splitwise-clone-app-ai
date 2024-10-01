@@ -2,7 +2,7 @@
 
 Built with Next.js 14 App Router, Clerk for Authentication, React, NeonDb for database management, ShadCN UI library for components, TypeScript, and TailwindCSS. Utilizing Cursor AI, Claude AI and Galileo AI.
 
-![Project Image](https://your-project-image-url.com)
+![Project Image](https://splitai.vercel.app/og-image.png)
 
 ## Features
 
