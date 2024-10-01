@@ -12,26 +12,13 @@ Built with Next.js 14 App Router, Clerk for Authentication, React, NeonDb for da
 - 💰 Add and track expenses within groups
 - 🧮 Automatic expense splitting and balance calculation
 - 📊 View balances and settle up with group members
-- 📝 AI-powered blog post generation based on audio transcription
-- 💳 Stripe integration for payments and subscription management
-- 💾 NeonDb for database management
-- 📤 UploadThing for file uploads
-- 🎙️ Audio and video file processing (up to 25MB)
-- 📜 TypeScript for type safety
 - 💅 TailwindCSS for styling
-- 🎨 ShadCN UI library for beautiful components
-- 🔒 Secure file handling and processing
-- 🪝 Webhook implementation for Stripe events
-- 💰 Stripe integration for custom pricing table, payment links, and subscriptions
-- 📊 User dashboard for managing blog posts
-- 🖋️ Markdown editor for blog post editing
 - 📱 Responsive design for mobile and desktop
 - 🎨 Beautiful UI components with ShadCN UI library
 - 💾 NeonDb for efficient database management
 - 📜 TypeScript for enhanced type safety
 - 💅 TailwindCSS for flexible and responsive styling
 - 🔔 Toast notifications for user feedback
-- 🔒 Protected routes and API endpoints
 - 🚀 Deployment-ready
 
 ## Getting started
