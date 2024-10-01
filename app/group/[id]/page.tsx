@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trash2 } from 'lucide-react';
 import { useParams } from 'next/navigation';
-import { useOrganizationList, useUser } from '@clerk/nextjs';
+import { useOrganization, useOrganizationList, useUser } from '@clerk/nextjs';
 import { getGroupData, deleteExpense } from '@/app/actions';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 // Define interfaces for Balance and Expense
 interface Balance {
@@ -41,12 +42,14 @@ function GroupPage() {
       infinite: true,
     },
   });
+  const { organization } = useOrganization();
   const { user, isLoaded: userLoaded } = useUser();
   const router = useRouter();
 
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [balances, setBalances] = useState<Balance[]>([]);
   const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
 
   useEffect(() => {
     async function fetchData() {
@@ -73,11 +76,11 @@ function GroupPage() {
     );
   }
 
-  const organization = userMemberships.data?.find(
+  const selectedOrganization = userMemberships.data?.find(
     (membership) => membership.organization.id === id
   );
 
-  if (!organization) {
+  if (!selectedOrganization) {
     return <div>Organization not found</div>;
   }
 
@@ -105,6 +108,15 @@ function GroupPage() {
   };
 
   const handleDeleteExpense = async (expenseId: string) => {
+    if (!isAdmin) {
+      toast({
+        title: 'Error 🚨',
+        description: 'Only admins can delete expenses. 🚫',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     const confirmed = window.confirm(
       'Are you sure you want to delete this expense?'
     );
@@ -118,16 +130,19 @@ function GroupPage() {
         setBalances(updatedBalances);
         router.refresh(); // Refresh the page to update any server-side rendered content
       } else {
-        alert('Failed to delete expense. Please try again.');
+        toast({ title: 'Failed to delete expense. Please try again.' });
       }
     }
   };
+
+  // @ts-expect-error Organization has membership
+  const isAdmin = organization?.membership?.role === 'org:admin';
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold mb-4">
-          {organization.organization.name}
+          {selectedOrganization.organization.name}
         </h1>
 
         <Link href="/groups">
